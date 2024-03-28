@@ -1,0 +1,68 @@
+.header__nav-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.header__nav {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+.header__logo {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 15px 20px;
+  filter: invert(1);
+}
+.header__links {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.header__link,
+.header__link--highlight {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+.header__link--highlight {
+  border: 1px solid var(--text-color);
+  padding: 10px 20px;
+}
+.header__hero {
+  height: 100vh;
+  background-image: linear-gradient(
+      rgba(38, 38, 38, 0.6),
+      rgba(38, 38, 38, 0.6)
+    ),
+    url(../img/hero-background.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-attachment: fixed;
+}
+.header__title {
+  font-size: 4rem;
+  font-weight: 400;
+}
+.header__description {
+  font-size: 2.5rem;
+  font-weight: b400;
+}
+@media (max-width: 400px) {
+  .header__logo {
+    visibility: hidden;
+    position: absolute;
+  }
+  .header__nav {
+    grid-template-columns: none;
+  }
+  .header__links {
+    margin-top: 20px;
+  }
+}
