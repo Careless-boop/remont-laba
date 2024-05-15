@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/catalog.css" />
+    <link rel="icon" href="img/icon.ico" type="image/x-icon" />
+    <title>Repair company | Catalog</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__nav-box">
+        <nav class="header__nav">
+          <img class="header__logo" src="img/icon.ico" alt="Company logo" />
+          <ul class="header__links">
+            <a class="header__alink" href="index.html#services"
+              ><li class="header__link">Services</li></a
+            >
+            <a class="header__alink" href="index.html#about-us"
+              ><li class="header__link">About</li></a
+            >
+            <a class="header__alink" href="index.html#reviews"
+              ><li class="header__link--highlight">Reviews</li></a
+            >
+          </ul>
+        </nav>
+      </div>
+      <div class="header__hero">
+        <div class="header__content container">
+          <h1 class="header__title">Repair company "Sweet home"</h1>
+          <p class="header__description">Making your life more comfortable</p>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section id="catalog" class="catalog">
+        <div class="catalog__container container">
+          <div class="catalog__header">
+            <h3 class="catalog__title">Services</h3>
+            <p class="catalog__description">
+              Here you can order some services that I provide.
+            </p>
+          </div>
+          <div class="catalog__content">
+            <div class="catalog__services">
+              <div
+                class="service"
+                v-for="service in catalog"
+                :key="service.id"
+              >
+                <p class="service__name">{{ service.name }} | ~{{service.price}}$</p>
+                <button class="service__add-button" @click="addToCart(service)">
+                  Order
+                </button>
+              </div>
+            </div>
+            <div class="services__total">
+              <h3 class="services__total-price">
+                Services: {{ selectedServicesCount }}
+              </h3>
+              <button
+                class="services__total-open-button"
+                @click="isModalOpen=true"
+              >
+                Show selected
+              </button>
+            </div>
+          </div>
+          <div v-if="isModalOpen" class="services__modal">
+            <div class="modal__content">
+              <span class="modal__close" @click="isModalOpen=false"
+                >&times;</span
+              >
+              <ul class="modal__list">
+                <li
+                  class="modal__item"
+                  v-for="service in selectedServicesDetails"
+                  :key="service.id"
+                >
+                  <div class="modal__item-text">
+                    <p>{{service.name}}</p>
+                    <p>~{{ service.price}}$</p>
+                  </div>
+                  <button
+                    class="modal__item-remove-button"
+                    @click="removeFromCart(index)"
+                  >
+                    Remove
+                  </button>
+                </li>
+              </ul>
+              <p class="modal__total">Services selected: {{ selectedServicesCount }}</p>
+              <p class="modal__total">Your repair will cost around ~{{ totalPrice }}$</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__left">
+        <p>Address: Peremogy st., Kyiv, Ukraine</p>
+        <p>Phone: +380 95 113 47 11</p>
+        <p>Email: sweethome@email.ua</p>
+      </div>
+      <div class="footer__right">
+        <a href="index.html#about-us">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#contacts">Contacts</a>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2024 Sweet Home. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="./js/catalog.js"></script>
+  </body>
+</html>

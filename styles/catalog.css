@@ -1,0 +1,116 @@
+@import url(global.css);
+@import url(header.css);
+@import url(footer.css);
+.catalog__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 5px auto;
+}
+.catalog__header {
+  border: 1px solid var(--alternative-text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+.catalog__content {
+  border: 1px solid var(--alternative-text-color);
+  padding: 10px;
+}
+.catalog__description {
+  color: var(--alternative-text-color);
+  padding-left: 10px;
+}
+.service {
+  border: 1px solid var(--alternative-text-color);
+  margin-bottom: -1px;
+  padding: 10px;
+}
+.service__add-button {
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 0;
+  color: white;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+  margin-left: 5px;
+}
+.service__name {
+  margin-bottom: 5px;
+}
+.service__add-button:hover {
+  background-color: var(--alternative-text-color);
+}
+.services__total {
+  text-align: right;
+  padding: 10px;
+}
+.services__total-open-button {
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 0;
+  color: white;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+  margin-left: 5px;
+}
+.services__total-open-button:hover {
+  background-color: var(--alternative-text-color);
+}
+.services__modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(128, 128, 128, 0.5);
+}
+.modal__content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  max-width: 766px;
+  transform: translate(-50%, -50%);
+  background-color: #262626;
+  border: 1px solid var(--alternative-text-color);
+  padding: 10px;
+}
+.modal__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  overflow-y: auto;
+  max-height: 395px;
+  border-bottom: 1px solid var(--alternative-text-color);
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.modal__item {
+  width: 295px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--services-header-color);
+}
+.modal__item-remove-button {
+  font-weight: bold;
+  margin: 5px;
+  background-color: transparent;
+  padding: 5px 10px;
+  border: 2px solid white;
+  transition: all 0.3s ease;
+  color: white;
+}
+.modal__item-remove-button:hover {
+  background-color: var(--alternative-text-color);
+}
+.modal__total{
+  text-align: right;
+}
+.modal__close {
+  cursor: pointer;
+}

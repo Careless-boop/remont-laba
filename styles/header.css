@@ -45,6 +45,7 @@
   align-items: center;
   text-align: center;
   background-attachment: fixed;
+  background-position: center;
 }
 .header__title {
   font-size: 4rem;
